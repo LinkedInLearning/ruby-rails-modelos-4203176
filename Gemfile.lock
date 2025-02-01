@@ -314,6 +314,7 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
+  rubocop
   rubocop-rails-omakase
   solid_cache
   solid_queue
