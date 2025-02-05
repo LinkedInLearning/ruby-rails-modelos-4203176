@@ -1,12 +1,12 @@
-# Domina Ruby on Rails
+# Domina Ruby on Rails: Modelos, migraciones y ActiveRecord
 
-Este es el repositorio del curso de LinkedIn Learning `[nombre del curso]`. El curso completo está disponible en [LinkedIn Learning][lil-course-url].
+Este es el repositorio del curso de LinkedIn Learning `Domina Ruby on Rails: Modelos, migraciones y ActiveRecord`. El curso completo está disponible en [LinkedIn Learning][lil-course-url].
 
 ![Nombre completo del curso][lil-thumbnail-url] 
 
 Consulta el archivo Readme en la rama main para obtener instrucciones e información actualizadas.
 
-DESCRIPCIÓN DEL CURSO
+Avanza en tu dominio de Ruby on Rails con este curso especializado en modelos, migraciones y ActiveRecord. Diseñado para desarrolladores de software que buscan potenciar sus habilidades en el desarrollo web, este curso te proporcionará una comprensión sólida de Ruby on Rails. Aprende a realizar migraciones de base de datos, manipular datos en el frontend con JavaScript y construir aplicaciones web completas y funcionales siguiendo las mejores prácticas de Rails.
 
 ## Instrucciones
 
@@ -28,7 +28,7 @@ Las ramas están estructuradas para corresponder a los vídeos del curso. La con
 
 **Carla Urrea Stabile**
 
-Echa un vistazo a mis otros cursos en [LinkedIn Learning](https://www.linkedin.com/learning/instructors/).
+Echa un vistazo a mis otros cursos en [LinkedIn Learning](https://www.linkedin.com/learning/instructors/carla-urrea-stabile).
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 [lil-course-url]: https://www.linkedin.com
