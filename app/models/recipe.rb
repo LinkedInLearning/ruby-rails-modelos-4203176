@@ -39,4 +39,8 @@ class Recipe < ApplicationRecord
       WHERE beans.name LIKE \'%#{bean_name}%\'
     ")
   end
+
+  def self.created_today
+    Recipe.where("DATE(created_at) = ?", Date.today)
+  end
 end
