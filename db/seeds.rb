@@ -10,9 +10,10 @@
 # Crear tostadores (Roasters)
 roaster1 = Roaster.create!(name: "Café del Sol", location: "Bogotá, Colombia", bio: "Tostador artesanal con granos de origen único.")
 roaster2 = Roaster.create!(name: "Golden Roast", location: "Seattle, USA", bio: "Especialistas en café de especialidad con tueste medio.")
+
 # Crear usuarios
-user1 = User.create!(username: "coffee_lover", email: "coffee_lover@example.com", bio: "Apasionado del café de especialidad.")
-user2 = User.create!(username: "barista_pro", email: "barista_pro@example.com", bio: "Barista profesional y amante del V60.")
+user1 = User.create!(email: "coffee_lover@example.com", bio: "Apasionado del café de especialidad.")
+user2 = User.create!(email: "barista_pro@example.com", bio: "Barista profesional y amante del V60.")
 # Crear granos de café (Beans)
 bean1 = Bean.create!(name: "Geisha", origin: "Panamá", tasting_notes: "Notas florales, jazmín, miel", roaster: roaster1, roasted_at: 10.days.ago)
 bean2 = Bean.create!(name: "Bourbon", origin: "El Salvador", tasting_notes: "Cacao, almendra, frutos rojos", roaster: roaster2, roasted_at: 25.days.ago)
