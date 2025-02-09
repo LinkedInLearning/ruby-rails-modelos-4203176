@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_02_153045) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_02_153530) do
   create_table "beans", force: :cascade do |t|
     t.string "name"
     t.string "origin"
@@ -42,7 +42,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_02_153045) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
     t.string "email"
     t.string "photo_url"
     t.text "bio"
