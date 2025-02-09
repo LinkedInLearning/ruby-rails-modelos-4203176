@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  # has_many :recipes, dependent: :delete_all
+  has_many :recipes, dependent: :destroy
+  
   # Ruby method that creates getter/setter methods for the attributes
   # these methods do not persist in the database
   attr_accessor :display_name
