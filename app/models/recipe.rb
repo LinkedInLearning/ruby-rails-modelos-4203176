@@ -28,4 +28,15 @@ class Recipe < ApplicationRecord
         puts "#{recipe.title} by #{recipe.user_name} with #{recipe.bean_name} from #{recipe.roaster_name}"
       end
   end
+
+  # Get all recipes with a specific bean name
+  def self.with_specific_bean(bean_name)
+    find_by_sql("
+      SELECT recipes.*
+      FROM recipes
+      JOIN recipe_beans ON recipes.id = recipe_beans.recipe_id
+      JOIN beans ON recipe_beans.bean_id = beans.id
+      WHERE beans.name LIKE \'%#{bean_name}%\'
+    ")
+  end
 end

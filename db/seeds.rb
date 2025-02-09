@@ -29,5 +29,8 @@ Recipe.create!(
   difficulty: 1,
   user: user2
 )
+RecipeBeans.create!(recipe: Recipe.last, bean: bean1, amount: 18)
+RecipeBeans.create!(recipe: Recipe.last, bean: bean2, amount: 18)
+
 
 puts "Seeding completed!"
