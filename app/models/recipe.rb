@@ -2,7 +2,13 @@ class Recipe < ApplicationRecord
   attribute :difficulty, :integer, default: 0
 
   belongs_to :user
-  
+
+  #relacion con la tabla intermedia
+  has_many :recipe_beans
+  has_many :beans, through: :recipe_beans
+
+  before_destroy :can_destroy?
+
   scope :easy, -> { where(difficulty: 1).or(Recipe.where(difficulty: 2)) }
 
   def pretty_print_recipes_by_user
@@ -20,12 +26,17 @@ class Recipe < ApplicationRecord
   end
 
   def with_roaster_and_bean
-    recipes = Recipe.joins(user: :recipes)
-      .joins("INNER JOIN beans ON recipes.id = beans.roaster_id")
-      .joins("INNER JOIN roasters ON beans.roaster_id = roasters.id")
-      .select("recipes.*, users.first_name AS user_name, beans.name AS bean_name, roasters.name AS roaster_name")
-      recipes.each do |recipe|
-        puts "#{recipe.title} by #{recipe.user_name} with #{recipe.bean_name} from #{recipe.roaster_name}"
-      end
+    recipes = Recipe.joins(:user)
+                    .joins(:beans)
+                    .joins("INNER JOIN roasters ON beans.roaster_id = roasters.id")
+                    .select("recipes.*, users.email AS user_email, roasters.name AS roaster_name, beans.name AS bean_name")
+
+    recipes.each do |recipe|
+      puts "#{recipe.title} by #{recipe.user_email}, using beans #{recipe.bean_name} from #{recipe.roaster_name}"
+    end
+  end
+
+  def can_destroy?
+    throw :abort if created_at.today?
   end
 end

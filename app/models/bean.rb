@@ -1,13 +1,17 @@
 class Bean < ApplicationRecord
   belongs_to :roaster
 
+  #relacion con la tabla intermedia
+  has_many :recipe_beans
+  has_many :recipes, through: :recipe_beans
+
   # Creates a new bean from a similar bean
   # by cloning its attributes and creating 
   # a new instance
-  def create_from_similar_bean(bean, roaster)
-    b2 = b1.deep_dup
-    b2.roaster_id = roaster.id
-    b2.save!
+  def create_similar_bean(roaster)
+    new_bean = self.deep_dup
+    new_bean.roaster_id = roaster.id
+    new_bean.save!
   end
 
   def fresh?
