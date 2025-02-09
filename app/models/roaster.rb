@@ -1,9 +1,7 @@
 class Roaster < ApplicationRecord
-  # The Rails Way
-  scope :not_from_colombia, -> { where.not(location: "Colombia") }
-  # The not so Rails Way but it will still work
-  def not_from_colombia
-    # Returns the roasters from everywhere except Colombia
-    Roaster.where.not(country: "Colombia")
+  def self.not_from_colombia
+    # SELECT FROM roasters WHERE id NOT IN (1,2,3)
+    excluded_ids = Roaster.where(location: "Bogotá, Colombia").pluck(:id)
+    Roaster.where.not(id: excluded_ids)
   end
 end
