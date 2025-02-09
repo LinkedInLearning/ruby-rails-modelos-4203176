@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_02_154227) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_02_200127) do
   create_table "beans", force: :cascade do |t|
     t.string "name"
     t.string "origin"
@@ -30,6 +30,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_02_154227) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "published", default: false
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
