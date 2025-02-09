@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_02_143717) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_02_145315) do
   create_table "beans", force: :cascade do |t|
     t.string "name"
     t.string "origin"
@@ -18,6 +18,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_02_143717) do
     t.integer "roaster_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "roasted_at"
     t.index ["roaster_id"], name: "index_beans_on_roaster_id"
   end
 

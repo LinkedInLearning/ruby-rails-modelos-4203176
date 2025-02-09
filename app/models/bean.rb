@@ -9,4 +9,12 @@ class Bean < ApplicationRecord
     b2.roaster_id = roaster.id
     b2.save!
   end
+
+  def fresh?
+    # Returns true if the bean was roasted in the last 20 days
+    # using between? method
+    roasted_at.between?(20.days.ago, Time.now)
+    # using cover? method
+    # (20.days.ago..Time.now).cover?(roasted_at)
+  end
 end
