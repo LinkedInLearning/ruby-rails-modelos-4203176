@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_02_200127) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_02_205912) do
   create_table "beans", force: :cascade do |t|
     t.string "name"
     t.string "origin"
@@ -20,6 +20,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_02_200127) do
     t.datetime "updated_at", null: false
     t.date "roasted_at"
     t.index ["roaster_id"], name: "index_beans_on_roaster_id"
+  end
+
+  create_table "recipe_beans", force: :cascade do |t|
+    t.integer "recipe_id", null: false
+    t.integer "bean_id", null: false
+    t.float "amount", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bean_id"], name: "index_recipe_beans_on_bean_id"
+    t.index ["recipe_id"], name: "index_recipe_beans_on_recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -50,8 +60,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_02_200127) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "beans", "roasters"
+  add_foreign_key "recipe_beans", "beans"
+  add_foreign_key "recipe_beans", "recipes"
   add_foreign_key "recipes", "users"
 end

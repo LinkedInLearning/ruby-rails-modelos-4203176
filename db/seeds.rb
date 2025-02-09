@@ -10,6 +10,7 @@
 # Crear tostadores (Roasters)
 roaster1 = Roaster.create!(name: "Café del Sol", location: "Bogotá, Colombia", bio: "Tostador artesanal con granos de origen único.")
 roaster2 = Roaster.create!(name: "Golden Roast", location: "Seattle, USA", bio: "Especialistas en café de especialidad con tueste medio.")
+
 # Crear usuarios
 user1 = User.create!(email: "coffee_lover@example.com", bio: "Apasionado del café de especialidad.")
 user2 = User.create!(email: "barista_pro@example.com", bio: "Barista profesional y amante del V60.")
@@ -30,4 +31,6 @@ Recipe.create!(
   user: user2
 )
 
+RecipeBeans.create!(recipe: Recipe.last, bean: bean1, amount: 18)
+RecipeBeans.create!(recipe: Recipe.last, bean: bean2, amount: 18)
 puts "Seeding completed!"
