@@ -33,7 +33,7 @@ Las ramas están estructuradas para corresponder a los vídeos del curso. La con
 Echa un vistazo a mis otros cursos en [LinkedIn Learning](https://www.linkedin.com/learning/instructors/carla-urrea-stabile).
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
-[lil-course-url]: https://www.linkedin.com
-[lil-thumbnail-url]: https:
+[lil-course-url]: https://www.linkedin.com/learning/domina-ruby-on-rails-modelos-migraciones-y-activerecord
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQFH_ZhwqQvEqw/learning-public-crop_675_1200/B4EZZmj1SHHoAY-/0/1745477392200?e=2147483647&v=beta&t=cLSOLc97-aJWzQLhkRkqMC0reqgyRlwExpDCO-DYOMk
 
 [1]: # (End of ES-Instruction ###############################################################################################)
